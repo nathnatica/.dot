@@ -10,6 +10,14 @@ alias mkdir='mkdir -p'
 alias pg='ps ax | grep'
 alias ns='netstat -tupln'
 
+alias gco='git checkout'
+alias gbr='git branch'
+alias gco='git commit'
+alias gs='git status'
+alias gg='git log --graph --abbrev-commit --pretty=oneline --decorate'
+alias gus='git reset HEAD --'
+alias glast='git log -1 HEAD'
+alias grv='git checkout'
 
 export EDITOR=vi
 set -o vi
@@ -32,12 +40,10 @@ save() {
 source ~/.dirs
 shopt -s cdable_vars
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/bin:/usr/local/bin # Add RVM to PATH for scripting
+export PATH
 
-
-
-
-
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" #Load RVM function
 
 
 
@@ -93,3 +99,6 @@ close_braket ()
 }
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \[${c_sgr0}\]$(open_braket)\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]$(close_braket)\[\033[01;34m\]\$\[\033[00m\] '
 
+
+
+export JAVA_OPTS="$JAVAOPTS -Dsolr.home=/usr/local/tomcat/webapps/solr"

@@ -3,7 +3,7 @@ if has('gui_running')
 	set lines=45
 else
 	set co=120
-	set lines=35
+"	set lines=35
 endif
 
 set printencoding=utf-8
