@@ -1,9 +1,10 @@
+
+
 if has('gui_running')
 	set co=140
 	set lines=45
 else
 	set co=120
-"	set lines=35
 endif
 
 set printencoding=utf-8
@@ -13,7 +14,10 @@ set smartcase
 set nu
 set ruler
 set laststatus=2
-set statusline=%<%F%h%m%r%h%w%y\ %{strftime(\"%Y/%m/%d-%H:%M\")}%=\ col:%c%V\ ascii:%b\ pos:%o\ lin:%l\,%L\ %P
+"set statusline=%<%F%h%m%r%h%w%y\ %{strftime(\"%Y/%m/%d-%H:%M\")}%=\ col:%c%V\ ascii:%b\ pos:%o\ lin:%l\,%L\ %P
+set statusline=%<%F%h%m%r%h%w%y%=col:%c%V\ ascii:%b\ pos:%o\ lin:%l\,%L\ %{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}%k[%{&ff}]\ %P
+
+
 syntax on
 set hlsearch
 let maplocalleader=','
